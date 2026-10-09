@@ -1,0 +1,371 @@
+/* ==========================================================================
+   FAZ DE CONTA BUFFET - TEMA CYBER-MÁGICO & NEON TECH INFANTIL
+   Paleta Escura Futurista, Efeitos Neon, Efeito Balanço da Logo e Alta Tecnologia
+   ========================================================================== */
+
+:root {
+  --neon-cyan: #00f0ff;
+  --neon-pink: #ff2a85;
+  --neon-purple: #b537f2;
+  --neon-yellow: #ffd700;
+  --neon-green: #00ff88;
+  --bg-deep-space: #060814;
+  --bg-card-tech: rgba(14, 20, 36, 0.85);
+  --border-tech: rgba(0, 240, 255, 0.2);
+}
+
+html {
+  scroll-behavior: smooth;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-deep-space);
+  color: #f1f5f9;
+  overflow-x: hidden;
+}
+
+.font-display {
+  font-family: 'Outfit', sans-serif;
+}
+
+.font-fun {
+  font-family: 'Fredoka', cursive, sans-serif;
+}
+
+/* Fundo Cyber-Grid Tecnológico com Luzes Mágicas */
+.cyber-grid-bg {
+  background-color: #060814;
+  background-image: 
+    radial-gradient(circle at 20% 15%, rgba(0, 240, 255, 0.15) 0%, transparent 45%),
+    radial-gradient(circle at 80% 25%, rgba(255, 42, 133, 0.18) 0%, transparent 45%),
+    radial-gradient(circle at 50% 75%, rgba(181, 55, 242, 0.14) 0%, transparent 55%),
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+}
+
+/* Header Transparente High-Tech */
+.header-glass-tech {
+  background: rgba(6, 8, 20, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 240, 255, 0.15);
+  transition: all 0.4s ease;
+}
+
+.header-glass-tech.scrolled {
+  background: rgba(6, 8, 20, 0.95);
+  border-bottom: 1px solid rgba(0, 240, 255, 0.4);
+  box-shadow: 0 10px 30px -10px rgba(0, 240, 255, 0.2);
+}
+
+/* Efeito de Balanço Suave da Logo (Pendulum Sway Animation) */
+@keyframes logoSway {
+  0% {
+    transform: rotate(-3.5deg) scale(1);
+  }
+  50% {
+    transform: rotate(3.5deg) scale(1.03);
+  }
+  100% {
+    transform: rotate(-3.5deg) scale(1);
+  }
+}
+
+.animate-logo-sway {
+  animation: logoSway 4.5s ease-in-out infinite;
+  transform-origin: 50% 20%;
+  will-change: transform;
+}
+
+/* Efeito Neon de Texto Brilhante */
+.neon-glow-cyan {
+  color: #ffffff;
+  text-shadow: 
+    0 0 7px #00f0ff,
+    0 0 20px rgba(0, 240, 255, 0.8),
+    0 0 45px rgba(0, 240, 255, 0.5),
+    0 0 80px rgba(0, 240, 255, 0.3);
+}
+
+.neon-glow-pink {
+  color: #ffffff;
+  text-shadow: 
+    0 0 7px #ff2a85,
+    0 0 20px rgba(255, 42, 133, 0.8),
+    0 0 45px rgba(255, 42, 133, 0.5),
+    0 0 80px rgba(255, 42, 133, 0.3);
+}
+
+.neon-glow-yellow {
+  color: #ffffff;
+  text-shadow: 
+    0 0 6px #ffd700,
+    0 0 18px rgba(255, 215, 0, 0.8),
+    0 0 40px rgba(255, 215, 0, 0.4);
+}
+
+.neon-glow-purple {
+  color: #ffffff;
+  text-shadow: 
+    0 0 7px #b537f2,
+    0 0 20px rgba(181, 55, 242, 0.8),
+    0 0 45px rgba(181, 55, 242, 0.4);
+}
+
+/* Cartões Tech com Efeito de "Subidinha" Marcante e Neon no Hover */
+.card-tech-neon {
+  background: rgba(14, 20, 36, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 240, 255, 0.22);
+  border-radius: 1.5rem;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-tech-neon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2.5px;
+  background: linear-gradient(90deg, transparent, #00f0ff, #ff2a85, transparent);
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+/* A "Subidinha" e Brilho no Hover */
+.card-tech-neon:hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: rgba(0, 240, 255, 0.7);
+  box-shadow: 
+    0 22px 45px -10px rgba(0, 0, 0, 0.85),
+    0 0 35px -5px rgba(0, 240, 255, 0.32);
+}
+
+.card-tech-neon:hover::before {
+  opacity: 1;
+}
+
+/* Botões Neon de Alta Tecnologia */
+.btn-neon-action {
+  background: linear-gradient(135deg, #00f0ff 0%, #0088ff 100%);
+  color: #050814;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  padding: 0.85rem 2rem;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.5), inset 0 0 10px rgba(255, 255, 255, 0.6);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-neon-action:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 0 35px rgba(0, 240, 255, 0.8), inset 0 0 15px rgba(255, 255, 255, 0.8);
+}
+
+.btn-neon-pink {
+  background: linear-gradient(135deg, #ff2a85 0%, #b537f2 100%);
+  color: #ffffff;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  padding: 0.85rem 2rem;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  box-shadow: 0 0 25px rgba(255, 42, 133, 0.5);
+  transition: all 0.3s ease;
+}
+
+.btn-neon-pink:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 0 35px rgba(255, 42, 133, 0.8);
+}
+
+.btn-tech-outline {
+  background: rgba(0, 240, 255, 0.05);
+  color: #ffffff;
+  border: 1.5px solid rgba(0, 240, 255, 0.6);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  font-size: 0.82rem;
+  padding: 0.8rem 1.8rem;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.btn-tech-outline:hover {
+  background: rgba(0, 240, 255, 0.15);
+  border-color: #00f0ff;
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Badges Neon Lúdicos (Ursinhos, Balões, Doces) */
+.badge-neon-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: rgba(0, 240, 255, 0.1);
+  color: #00f0ff;
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.15);
+}
+
+.badge-neon-tag.pink {
+  background: rgba(255, 42, 133, 0.1);
+  color: #ff2a85;
+  border-color: rgba(255, 42, 133, 0.35);
+  box-shadow: 0 0 15px rgba(255, 42, 133, 0.2);
+}
+
+.badge-neon-tag.yellow {
+  background: rgba(255, 215, 0, 0.1);
+  color: #ffd700;
+  border-color: rgba(255, 215, 0, 0.35);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+}
+
+/* Linha Neon Laser */
+.laser-divider {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00f0ff, #ff2a85, #b537f2, transparent);
+  box-shadow: 0 0 12px rgba(0, 240, 255, 0.6);
+}
+
+/* Animação Flutuante Lúdica */
+@keyframes floatTech {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(3deg);
+  }
+}
+
+.animate-float-tech {
+  animation: floatTech 5s ease-in-out infinite;
+}
+
+.animate-float-tech-slow {
+  animation: floatTech 7s ease-in-out infinite 1.5s;
+}
+
+/* Pulso WhatsApp com Neon Verde */
+@keyframes pulseNeonWhatsApp {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.7), 0 0 20px rgba(0, 255, 136, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 22px rgba(0, 255, 136, 0), 0 0 35px rgba(0, 255, 136, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 255, 136, 0), 0 0 20px rgba(0, 255, 136, 0.5);
+  }
+}
+
+.pulse-whatsapp-neon {
+  animation: pulseNeonWhatsApp 2.5s infinite;
+}
+
+/* Accordion FAQ */
+.faq-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.faq-item.is-open .faq-content {
+  max-height: 400px;
+}
+
+.faq-item.is-open .faq-icon {
+  transform: rotate(180deg);
+  color: #00f0ff;
+}
+
+/* Galeria com Brilho Futurista e Efeito Subidinha */
+.gallery-tech-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  background: #0d1222;
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.35s ease, 
+              box-shadow 0.35s ease;
+}
+
+.gallery-tech-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: #00f0ff;
+  box-shadow: 0 15px 30px -10px rgba(0, 240, 255, 0.35);
+}
+
+.gallery-tech-card img {
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s ease;
+}
+
+.gallery-tech-card:hover img {
+  transform: scale(1.08);
+}
+
+/* Botão Oficial Instagram com Gradiente */
+.instagram-gradient-btn {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  color: #ffffff;
+  box-shadow: 0 0 20px rgba(220, 39, 67, 0.45);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.instagram-gradient-btn:hover {
+  transform: translateY(-3px) scale(1.08);
+  box-shadow: 0 0 30px rgba(220, 39, 67, 0.7);
+}
+
+/* Scrollbar Futurista */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #060814;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 240, 255, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00f0ff;
+  box-shadow: 0 0 10px #00f0ff;
+}
